@@ -1,5 +1,6 @@
 import ast
 from odoo import api, models, fields
+from odoo.osv import expression
 
 
 class AccountMoveLine(models.Model):
@@ -17,16 +18,16 @@ class AccountMoveLine(models.Model):
         """
         # if the object has an active field ('active', 'x_active'), filter out all
         # inactive records unless they were explicitly asked for
-        if self._active_name and active_test and self.env.context.get('active_test', True):
-            # the item[0] trick below works for domain items and '&'/'|'/'!'
-            # operators too
-            if not any(item[0] == self._active_name for item in domain):
-                domain = [(self._active_name, '=', 1)] + domain
+        if self._context.get('active_test', active_test):
+            if 'active' in self._fields:
+                domain = expression.AND([domain, [('active', '=', True)]])
+            if 'x_active' in self._fields:
+                domain = expression.AND([domain, [('x_active', '=', True)]])
 
         if domain:
-            from odoo.osv import expression
-            return expression.expression(domain, self).query
+            return self._where_calc(domain)
         else:
+            from odoo.tools.sql import Query
             return Query(self.env, self._table, self._table_sql)
 
     @api.model
@@ -43,14 +44,13 @@ class AccountMoveLine(models.Model):
         Rule = self.env['ir.rule']
         domain = Rule._compute_domain(self._name, mode)
         if domain:
-            from odoo.osv import expression
             expression.expression(domain, self.sudo(), self._table, query)
 
     @api.model
     def _query_get(self, domain=None):
         self.check_access('read')
 
-        context = dict(self.env.context or {})
+        context = dict(self._context or {})
         domain = domain or []
         if not isinstance(domain, (list, tuple)):
             domain = ast.literal_eval(domain)
