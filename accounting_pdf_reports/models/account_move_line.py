@@ -25,7 +25,7 @@ class AccountMoveLine(models.Model):
                 domain = expression.AND([domain, [('x_active', '=', True)]])
 
         if domain:
-            return self._where_calc(domain)
+            return super()._where_calc(domain)
         else:
             from odoo.tools.sql import Query
             return Query(self.env, self._table, self._table_sql)
