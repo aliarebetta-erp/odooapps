@@ -14,6 +14,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
+"Language: es_AR\n"
+
 
 #. module: om_account_followup
 #: model:followup.line,description:om_account_followup.demo_followup_line3
