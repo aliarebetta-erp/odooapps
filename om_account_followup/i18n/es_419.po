@@ -13,7 +13,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: es_AR\n"
+"Language: es_419\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 
@@ -599,7 +599,6 @@ msgstr "Nombre mostrado"
 
 #. module: om_account_followup
 #: model:ir.ui.menu,name:om_account_followup.om_account_followup_s
-#: model_terms:ir.ui.view,arch_db:om_account_followup.view_partner_inherit_followup_form
 msgid "Do Manual Follow-Ups"
 msgstr "Hacer seguimientos manuales"
 
@@ -682,7 +681,6 @@ msgstr "Acción de seguimiento"
 
 #. module: om_account_followup
 #: model:ir.ui.menu,name:om_account_followup.menu_finance_followup
-#: model_terms:ir.ui.view,arch_db:om_account_followup.view_om_account_followup_print
 msgid "Follow-Ups"
 msgstr "Seguimientos"
 
@@ -753,7 +751,6 @@ msgstr "Líneas de seguimiento"
 #. module: om_account_followup
 #: model:ir.actions.act_window,name:om_account_followup.action_followup_stat
 #: model:ir.ui.menu,name:om_account_followup.menu_action_followup_stat_follow
-#: model_terms:ir.ui.view,arch_db:om_account_followup.view_om_account_followup_stat_search
 msgid "Follow-ups Analysis"
 msgstr "Análisis de seguimientos"
 
@@ -933,7 +930,6 @@ msgstr "Acción manual"
 
 #. module: om_account_followup
 #: model:ir.actions.act_window,name:om_account_followup.action_customer_followup
-#: model:ir.ui.menu,name:om_account_followup.om_account_followup_s
 msgid "Manual Follow-Ups"
 msgstr "Seguimientos manuales"
 
@@ -950,7 +946,6 @@ msgstr "Nivel máximo de seguimiento"
 #. module: om_account_followup
 #: model:ir.actions.act_window,name:om_account_followup.action_customer_my_followup
 #: model:ir.ui.menu,name:om_account_followup.menu_sale_followup
-#: model_terms:ir.ui.view,arch_db:om_account_followup.customer_followup_search_view
 msgid "My Follow-Ups"
 msgstr "Mis seguimientos"
 
@@ -1102,13 +1097,11 @@ msgstr "Enviar correo electrónico en el Language de la empresa"
 
 #. module: om_account_followup
 #: model:ir.actions.act_window,name:om_account_followup.action_om_account_followup_print
-#: model_terms:ir.ui.view,arch_db:om_account_followup.view_om_account_followup_print
 msgid "Send Follow-Ups"
 msgstr "Enviar seguimientos"
 
 #. module: om_account_followup
 #: model:ir.ui.menu,name:om_account_followup.om_account_followup_print_menu
-#: model_terms:ir.ui.view,arch_db:om_account_followup.view_om_account_followup_print
 msgid "Send Letters and Emails"
 msgstr "Enviar cartas y mails"
 
